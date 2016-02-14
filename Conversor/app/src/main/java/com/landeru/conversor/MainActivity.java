@@ -86,87 +86,84 @@ public class MainActivity extends AppCompatActivity {
 
         // Tratamiento del Button
 
-        Button convertir = (Button) findViewById(R.id.button);
+        final Button convertir = (Button) findViewById(R.id.button);
 
         // Darle nombre al botón
 
         convertir.setText("Convertir");
 
+
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+
+            //Funcion para controlar el paso del dato
+
+            public void controlarAccion (String accion, Double dato){
+
+                Intent i = new Intent(getApplicationContext(), Main2Activity.class);
+                i.putExtra(accion, dato);
+                startActivity(i);
+            } //controlarAccion
+
             @Override
             public void onClick(View v) {
 
-                if(entradaDatos.getText().length() == 0){
+                if (entradaDatos.getText().length() == 0) {
 
                     // No hay dato
 
-                    Intent i = new Intent(getApplicationContext(),Main2Activity.class);
-                    i.putExtra("VACIO", 0);
-                    startActivity(i);
+                    controlarAccion("VACIO",0.0);
 
 
-                }else if (rb1.isChecked() && rbg1.isChecked()){
+                } else if (rb1.isChecked() && rbg1.isChecked()) {
 
                     //kilobyte-->kilobyte
                     String recogida = entradaDatos.getText().toString();
                     Double pasoDato = new Double(recogida);
-                    Intent i = new Intent(getApplicationContext(), Main2Activity.class);
-                    i.putExtra("kilobyte-kilobyte", pasoDato);
-                    startActivity(i);
+                    controlarAccion("kilobyte-kilobyte",pasoDato);
 
-                } else if (rb1.isChecked() && rbg2.isChecked()){
+                } else if (rb1.isChecked() && rbg2.isChecked()) {
 
                     //kilobyte->MegaByte
                     String recogida = entradaDatos.getText().toString();
                     Double pasoDato = new Double(recogida);
-                    Intent i = new Intent(getApplicationContext(), Main2Activity.class);
-                    i.putExtra("kilobyte-megabyte", pasoDato);
-                    startActivity(i);
+                   controlarAccion("kilobyte-megabyte",pasoDato);
 
-                } else if (rb1.isChecked() && rbg3.isChecked()){
+                } else if (rb1.isChecked() && rbg3.isChecked()) {
 
                     //kilobyte->GigaByte
                     String recogida = entradaDatos.getText().toString();
                     Double pasoDato = new Double(recogida);
                     Intent i = new Intent(getApplicationContext(), Main2Activity.class);
-                    i.putExtra("kilobyte-gigabyte", pasoDato);
-                    startActivity(i);
+                    controlarAccion("kilobyte-gigabyte",pasoDato);
 
-                } else if (rb2.isChecked() && rbg1.isChecked()){
+                } else if (rb2.isChecked() && rbg1.isChecked()) {
 
                     //MegaByte--> KiloByte
                     String recogida = entradaDatos.getText().toString();
                     Double pasoDato = new Double(recogida);
                     Intent i = new Intent(getApplicationContext(), Main2Activity.class);
-                    i.putExtra("megabyte-kilobyte", pasoDato);
-                    startActivity(i);
+                    controlarAccion("megabyte-kilobyte",pasoDato);
 
-                } else if (rb2.isChecked() && rbg2.isChecked()){
+                } else if (rb2.isChecked() && rbg2.isChecked()) {
 
                     //MegaByte--> MegaByte
                     String recogida = entradaDatos.getText().toString();
                     Double pasoDato = new Double(recogida);
-                    Intent i = new Intent(getApplicationContext(), Main2Activity.class);
-                    i.putExtra("megabyte-megabyte", pasoDato);
-                    startActivity(i);
+                    controlarAccion("megabyte-megabyte",pasoDato);
 
-                } else if (rb2.isChecked() && rbg3.isChecked()){
+                } else if (rb2.isChecked() && rbg3.isChecked()) {
 
                     //MegaByte--> GigaByte
                     String recogida = entradaDatos.getText().toString();
                     Double pasoDato = new Double(recogida);
-                    Intent i = new Intent(getApplicationContext(), Main2Activity.class);
-                    i.putExtra("megabyte-gigabyte", pasoDato);
-                    startActivity(i);
+                    controlarAccion("megabyte-gigabyte",pasoDato);
 
                 } else if (rb3.isChecked() && rbg1.isChecked()) {
 
                     //GigaBytes-->Kilobytes
                     String recogida = entradaDatos.getText().toString();
                     Double pasoDato = new Double(recogida);
-                    Intent i = new Intent(getApplicationContext(), Main2Activity.class);
-                    i.putExtra("gigabyte-kilobyte", pasoDato);
-                    startActivity(i);
+                   controlarAccion("gigabyte-kilobyte",pasoDato);
 
 
                 } else if (rb3.isChecked() && rbg2.isChecked()) {
@@ -174,18 +171,14 @@ public class MainActivity extends AppCompatActivity {
                     //GigaByte--> MegaByte
                     String recogida = entradaDatos.getText().toString();
                     Double pasoDato = new Double(recogida);
-                    Intent i = new Intent(getApplicationContext(), Main2Activity.class);
-                    i.putExtra("gigabyte-megabyte", pasoDato);
-                    startActivity(i);
+                    controlarAccion("gigabyte-megabyte",pasoDato);
 
-                } else if (rb3.isChecked() && rbg3.isChecked()){
+                } else if (rb3.isChecked() && rbg3.isChecked()) {
 
                     //GigaByte--> GigaByte
                     String recogida = entradaDatos.getText().toString();
                     Double pasoDato = new Double(recogida);
-                    Intent i = new Intent(getApplicationContext(), Main2Activity.class);
-                    i.putExtra("gigabyte-gigabyte", pasoDato);
-                    startActivity(i);
+                    controlarAccion("gigabyte-gigabyte",pasoDato);
 
                 }
 

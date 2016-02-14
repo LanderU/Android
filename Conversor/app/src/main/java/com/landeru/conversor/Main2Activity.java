@@ -32,92 +32,83 @@ public class Main2Activity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        if (extras != null) {
+        if (extras != null){
 
-            dato = extras.getDouble("VACIO");
+            if (extras.containsKey("VACIO")){
 
-        }
+                dato = extras.getDouble("VACIO");
 
-        Bundle kiloKilo = getIntent().getExtras();
+                resultado.setText("La conversión es: " + String.format("%.2f", dato));
 
-        if (kiloKilo != null) {
+            } else if (extras.containsKey("kilobyte-kilobyte")){
 
-            dato = kiloKilo.getDouble("kkilobyte-kilobyte");
-        }
+                dato = extras.getDouble("kilobyte-kilobyte");
 
-        Bundle kiloMega = getIntent().getExtras();
+                resultado.setText("La conversión es: " + String.format("%.2f", dato));
+            } else if (extras.containsKey("kilobyte-megabyte")){
 
-        if(kiloMega != null){
+                dato = extras.getDouble("kilobyte-megabyte");
 
-            dato = kiloMega.getDouble("kilobyte-megabyte");
-            dato /= 1024;
-        }
+                dato /= 1024;
 
-        Bundle kiloGiga = getIntent().getExtras();
+                resultado.setText("La conversión es: " + String.format("%.8f", dato));
+            } else if (extras.containsKey("kilobyte-gigabyte")){
 
-        if (kiloGiga != null){
+                dato = extras.getDouble("kilobyte-gigabyte");
 
-            dato = kiloGiga.getDouble("kilobyte-gigabyte");
-            dato /= 1048576;
-        }
+                dato /= 1048576;
 
-        Bundle megaKilo = getIntent().getExtras();
+                resultado.setText("La conversión es: " + String.format("%.8f", dato));
 
-        if (megaKilo != null){
+            } else if (extras.containsKey("megabyte-kilobyte")){
 
-            dato = megaKilo.getDouble("megabyte-kilobyte");
+                dato = extras.getDouble("megabyte-kilobyte");
 
-            dato *= 1024;
-        }
+                dato *= 1024;
 
-        Bundle megaMega = getIntent().getExtras();
+                resultado.setText("La conversión es: " + String.format("%.2f", dato));
 
-        if(megaMega != null){
+            } else if (extras.containsKey("megabyte-megabyte")) {
 
-            dato = megaKilo.getDouble("megabyte-megabyte");
+                dato = extras.getDouble("megabyte-megabyte");
 
-        }
+                resultado.setText("La conversión es: " + String.format("%.2f", dato));
 
-        Bundle megaGiga = getIntent().getExtras();
+            } else if (extras.containsKey("megabyte-gigabyte")){
 
-        if(megaGiga != null){
-            dato = megaGiga.getDouble("megabyte-gigabyte");
+                dato = extras.getDouble("megabyte-gigabyte");
 
-            dato /= 1024;
+                dato /= 1024;
 
-        }
+                resultado.setText("La conversión es: " + String.format("%.8f", dato));
 
-        Bundle gigaKilo = getIntent().getExtras();
+            } else if (extras.containsKey("gigabyte-kilobyte")) {
 
-        if (gigaKilo != null){
+                dato = extras.getDouble("gigabyte-kilobyte");
 
-            dato = gigaKilo.getDouble("gigabyte-kilobyte");
+                dato *= 1048576;
 
-            dato *= 1048576;
+                resultado.setText("La conversión es: " + String.format("%.2f", dato));
 
-        }
+            } else if (extras.containsKey("gigabyte-megabyte")) {
 
-        Bundle gigaMega = getIntent().getExtras();
+                dato = extras.getDouble("gigabyte-megabyte");
 
-        if (gigaKilo != null){
+                dato *= 1024;
 
-            dato = gigaMega.getDouble("gigabyte-megabyte");
+                resultado.setText("La conversión es: " + String.format("%.2f", dato));
 
-            dato *= 1024;
+            } else if (extras.containsKey("gigabyte-gigabyte")) {
 
-        }
+                dato = extras.getDouble("gigabyte-gigabyte");
 
-        Bundle gigaGiga = getIntent().getExtras();
-
-        if (gigaKilo != null){
-
-            dato = gigaGiga.getDouble("gigabyte-gigabyte");
-
-        }
+                resultado.setText("La conversión es: " + String.format("%.2f", dato));
+            }
 
 
-        resultado.setText("La conversión es: "+ String.format("%.8f",dato));
 
+
+        } // end IF
 
     }
 
