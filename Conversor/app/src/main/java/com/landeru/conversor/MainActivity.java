@@ -18,6 +18,19 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private RadioButton rb1;
+    private  RadioButton rb2;
+    private  RadioButton rb3;
+
+    private RadioButton rbg1;
+    private RadioButton rbg2;
+    private RadioButton rbg3;
+
+    private EditText entradaDatos;
+
+    private Button convertir;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Tratamiento de RadioButton Grupo1
 
-        final RadioButton rb1 = (RadioButton) findViewById(R.id.radioButton);
-        final RadioButton rb2 = (RadioButton) findViewById(R.id.radioButton2);
-        final  RadioButton rb3 = (RadioButton) findViewById(R.id.radioButton3);
+        rb1 = (RadioButton) findViewById(R.id.radioButton);
+        rb2 = (RadioButton) findViewById(R.id.radioButton2);
+        rb3 = (RadioButton) findViewById(R.id.radioButton3);
 
         // Nombres a los RadioButton del primer grupo
 
@@ -61,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Tratamiento RadioButton Grupo2
 
-        final RadioButton rbg1 = (RadioButton) findViewById(R.id.radioButton4);
-        final RadioButton rbg2 = (RadioButton) findViewById(R.id.radioButton5);
-        final RadioButton rbg3 = (RadioButton) findViewById(R.id.radioButton6);
+        rbg1 = (RadioButton) findViewById(R.id.radioButton4);
+        rbg2 = (RadioButton) findViewById(R.id.radioButton5);
+        rbg3 = (RadioButton) findViewById(R.id.radioButton6);
 
 
         // Nombres para los RadioButton del segundo grupo
@@ -81,12 +94,12 @@ public class MainActivity extends AppCompatActivity {
 
         // EditText
 
-        final EditText entradaDatos = (EditText) findViewById(R.id.editText);
+        entradaDatos = (EditText) findViewById(R.id.editText);
 
 
         // Tratamiento del Button
 
-        final Button convertir = (Button) findViewById(R.id.button);
+        convertir = (Button) findViewById(R.id.button);
 
         // Darle nombre al botón
 
