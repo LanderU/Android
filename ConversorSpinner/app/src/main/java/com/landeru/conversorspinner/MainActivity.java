@@ -12,6 +12,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+// Java imports
+import java.util.List;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinnerOrigen = (Spinner) findViewById(R.id.spinner);
     private Spinner spinnerDestino = (Spinner) findViewById(R.id.spinner2);
     private Button convertir = (Button) findViewById(R.id.button);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 */
+
+        // Creación de la clase para mostrar el los spinners
+
+        List<TipoDato> listaDatos = new ArrayList<>();
+        // Añadimos al ArrayList los items
+        listaDatos.add(new TipoDato("Bytes"));
+        listaDatos.add(new TipoDato("KiloBytes"));
+        listaDatos.add(new TipoDato("MegaBytes"));
+
+
+        // Acción de pulsar el botón
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
