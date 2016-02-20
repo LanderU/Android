@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         listaDatos.add(new TipoDato("KiloBytes"));
         listaDatos.add(new TipoDato("MegaBytes"));
 
+        // Creación del adaptador para carga lenta
+
+        LazyAdapter adaptador = new LazyAdapter(this, listaDatos);
 
         // Acción de pulsar el botón
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
