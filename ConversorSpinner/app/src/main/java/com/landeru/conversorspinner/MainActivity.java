@@ -18,10 +18,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText introducirDato = (EditText) findViewById(R.id.editText);
-    private Spinner spinnerOrigen = (Spinner) findViewById(R.id.spinner);
-    private Spinner spinnerDestino = (Spinner) findViewById(R.id.spinner2);
-    private Button convertir = (Button) findViewById(R.id.button);
+    private EditText introducirDato;
+    private Spinner spinnerOrigen;
+    private Spinner spinnerDestino;
+    private Button convertir;
 
 
     @Override
@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
 */
+       //
 
         // Creación de la clase para mostrar el los spinners
 
@@ -54,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
 
         LazyAdapter adaptador = new LazyAdapter(this, listaDatos);
 
+        spinnerOrigen = (Spinner) findViewById(R.id.spinner);
+        spinnerOrigen.setAdapter(adaptador);
+
+        spinnerDestino = (Spinner) findViewById(R.id.spinner2);
+        spinnerDestino.setAdapter(adaptador);
+
+
+
         // Acción de pulsar el botón
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Main2Activity.class));
             }
         });
+
     }
 
     @Override
