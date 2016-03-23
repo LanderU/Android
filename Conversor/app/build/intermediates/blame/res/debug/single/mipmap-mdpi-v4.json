@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/lander/github/Android/Conversor/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
+        "source": "/Users/lander/github/Android/Conversor/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/lander/github/ejemplos-android/Conversor/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
+        "source": "/Users/lander/github/ejemplos-android/Conversor/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    }
+]

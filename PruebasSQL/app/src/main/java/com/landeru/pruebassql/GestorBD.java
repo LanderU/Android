@@ -35,7 +35,7 @@ public class GestorBD {
         public static final String CREAR_TABLA_FECHA = "CREATE TABLE "+TABLA_FECHA
                 +"("+COLUMNA_FECHA_ID+"INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
                 + COLUMNA_FECHA_TIEMPO+" TEXT NOT NULL"
-                + ")";
+                + ");";
 
         // String que genera la tabla RUTA
 
@@ -45,7 +45,7 @@ public class GestorBD {
                 + COLUMNA_RUTA_LATITUD+ "REAL NOT NULL,"
                 + COLUMNA_RUTA_TIEMPO+ "TEXT NOT NULL,"
                 + COLUMNA_RUTA_ID_FECHA +" INTEGER NOT NULL, "
-                +"FOREIGN KEY ("+COLUMNA_RUTA_ID_FECHA+") REFERENCES"+TABLA_FECHA+"("+COLUMNA_FECHA_ID+")";
+                +"FOREIGN KEY ("+COLUMNA_RUTA_ID_FECHA+") REFERENCES"+TABLA_FECHA+"("+COLUMNA_FECHA_ID+");";
 
 
         // Constructor
@@ -60,24 +60,39 @@ public class GestorBD {
         @Override
         public void onCreate(SQLiteDatabase db){
             // Ejecutamos las sentencias de crear las BD
-            db.execSQL(CREAR_TABLA_FECHA);
-            db.execSQL(CREAR_TABLA_RUTA);
+
+            if(!db.isReadOnly()){
+                // Activamos las claves ajenas
+                db.execSQL("PRAGMA foreign_keys=ON;");
+                db.execSQL(CREAR_TABLA_FECHA);
+                db.execSQL(CREAR_TABLA_RUTA);
+
+            }// end if
+
         }// end onCreate
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
             // Si modificamos la versión de la BD la volvemos a crear
 
-            db.execSQL("DROP TABLE IF EXISTS" + TABLA_FECHA);
-            db.execSQL("DROP TABLE IF EXISTS" + TABLA_RUTA);
+            if(!db.isReadOnly()){
 
-            // Llamamos al método para volver a crearlas
 
-            onCreate(db);
+                db.execSQL("DROP TABLE IF EXISTS" + TABLA_FECHA);
+                db.execSQL("DROP TABLE IF EXISTS" + TABLA_RUTA);
+
+                // Llamamos al método para volver a crearlas
+
+                onCreate(db);
+
+
+            }// end if
 
 
         } // end onUpgrade
 
-    }// end class
+    }// end BDHelper
+
+    // métodos abrir cerrar recoger insertar etc
 
 }// end class
