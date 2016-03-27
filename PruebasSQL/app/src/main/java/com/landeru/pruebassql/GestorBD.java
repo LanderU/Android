@@ -3,11 +3,27 @@ package com.landeru.pruebassql;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import java.sql.SQLException;
 
 /**
  * Created by lander on 23/3/16.
  */
 public class GestorBD {
+
+    private SQLiteDatabase bd;
+    private  DatabaseHelper helper;
+    private final Context context;
+
+    public GestorBD(Context ctx){
+        this.context = ctx;
+        this.helper = new DatabaseHelper(this.context);
+
+    }//constructor
+
+
+
+
 
     public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -52,7 +68,7 @@ public class GestorBD {
 
         public DatabaseHelper(Context context){
 
-            super(context,NOMBRE_BD,null,VERSION);
+           super(context,NOMBRE_BD,null,VERSION);
 
 
         }// end DATABaeHelper
@@ -91,8 +107,32 @@ public class GestorBD {
 
         } // end onUpgrade
 
-    }// end BDHelper
+        public DatabaseHelper(Context context, String nombre, CursorFactory factory, int version){
 
-    // métodos abrir cerrar recoger insertar etc
+            super(context,NOMBRE_BD,factory,VERSION);
+        }
+
+    }// end class
+
+    // métodos abrir el gestod de BD
+
+    public GestorBD abrir() throws SQLException {
+
+        this.bd = this.helper.getWritableDatabase();
+
+        return this;
+    } // end abrir
+
+    // Método para cerrar
+
+    public void cerrar(){
+
+        this.helper.close();
+
+    }// end cerrar
+
+
+
+
 
 }// end class
