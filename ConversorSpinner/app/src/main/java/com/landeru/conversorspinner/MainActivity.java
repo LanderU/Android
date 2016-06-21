@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 */
        //
 
-        // Creación de la clase para mostrar el los spinners
+        // Creación de la clase para mostrar en los spinners
 
         List<TipoDato> listaDatos = new ArrayList<>();
         // Añadimos al ArrayList los items
