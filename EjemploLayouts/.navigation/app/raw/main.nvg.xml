@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.jaureguialzo.ejemplolayouts.GridLayoutActivity"/>
+      <point      
+        x = "472"      
+        y = "2868"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.jaureguialzo.ejemplolayouts.TableLayoutActivity"/>
+      <point      
+        x = "1716"      
+        y = "2852"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.jaureguialzo.ejemplolayouts.FrameLayoutActivity"/>
+      <point      
+        x = "4080"      
+        y = "84"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.jaureguialzo.ejemplolayouts.LinearLayoutHorizontalActivity"/>
+      <point      
+        x = "4068"      
+        y = "1624"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.jaureguialzo.ejemplolayouts.MainActivity"/>
+      <point      
+        x = "500"      
+        y = "100"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.jaureguialzo.ejemplolayouts.LinearLayoutVerticalActivity"/>
+      <point      
+        x = "3084"      
+        y = "2876"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>

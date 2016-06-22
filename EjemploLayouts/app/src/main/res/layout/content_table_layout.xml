@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.jaureguialzo.ejemplolayouts.TableLayoutActivity"
+    tools:showIn="@layout/activity_table_layout">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/etiqueta"
+            android:text="A" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="B" />
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="C" />
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="D" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="E" />
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="F" />
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="G" />
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="H" />
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="I" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="J" />
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="K" />
+
+            <TextView
+                style="@style/etiqueta"
+                android:text="L" />
+        </TableRow>
+
+    </TableLayout>
+</RelativeLayout>
